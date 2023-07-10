@@ -152,6 +152,22 @@ public class ReaderActivity extends AppCompatActivity {
                         case MifareClassic.TYPE_PRO:
                             type = "Pro";
                             break;
+                        case MifareClassic.TYPE_UNKNOWN:
+                            type = "Unknown";
+                            break;
+                        case MifareClassic.SIZE_1K:
+                            type = "Size 1K";
+                            break;
+                        case MifareClassic.SIZE_2K:
+                            type = "Size 2K";
+                            break;
+                        case MifareClassic.SIZE_4K:
+                            type = "Size 4k";
+                            break;
+                        case MifareClassic.SIZE_MINI:
+                            type = "Size Mini";
+                            break;
+
                     }
                     sb.append('\n');
 
@@ -185,6 +201,27 @@ public class ReaderActivity extends AppCompatActivity {
                     sb.append(mifareTag.getMaxTransceiveLength());
                     sb.append('\n');
 
+                    sb.append('\n');
+                    sb.append("Authentication with Key A: ");
+                    sb.append(mifareTag.authenticateSectorWithKeyA(1, MifareClassic.KEY_NFC_FORUM));
+                    sb.append('\n');
+
+                    sb.append('\n');
+                    sb.append("Authentication with Key B: ");
+                    sb.append(mifareTag.authenticateSectorWithKeyB(1, MifareClassic.KEY_DEFAULT));
+                    sb.append('\n');
+
+                    sb.append('\n');
+                    sb.append("Authentication with Key A: ");
+                    sb.append(mifareTag.authenticateSectorWithKeyA(1, MifareClassic.KEY_MIFARE_APPLICATION_DIRECTORY));
+                    sb.append('\n');
+
+                    sb.append('\n');
+                    sb.append("Authentication with Key B: ");
+                    sb.append(mifareTag.authenticateSectorWithKeyB(1, MifareClassic.KEY_MIFARE_APPLICATION_DIRECTORY));
+                    sb.append('\n');
+
+                    mifareTag.close();
 
                 } catch (Exception e){
                     sb.append("Mifare classic error: " + e.getMessage());
