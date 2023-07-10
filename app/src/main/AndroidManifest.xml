@@ -22,9 +22,6 @@
             android:name=".ReaderActivity"
             android:exported="false" />
         <activity
-            android:name=".WriteActivity"
-            android:exported="false" />
-        <activity
             android:name=".MemoryActivity"
             android:exported="false" />
         <activity
