@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">AppWidy</string>
+    <string name="str_read_with_nfc">Read  with NFC</string>
+    <string name="str_Write_with_nfc">Write with NFC</string>
+    <string name="todo">TODO</string>
+    <string name="str_nfc">NFC</string>
+    <string name="str_nfc_read_text">Tap your NFC tag on \n mobile to read</string>
+    <string name="str_nfc_write_text">Tap your NFC tag on \n mobile to write</string>
+    <string name="str_tag_nfc">Read Sector</string>
+    <string name="str_tag_reader_writer">Read adn Writer Sector</string>
+    <string name="str_tap_your_nfc_tag_on_mobile_to_read">Tap your NFC tag on mobile to read</string>
+    <string name="tap_your_str_nfc_tag_on_mobile_to_read">Tap your NFC tag on mobile to read</string>
+    <string name="str_todo">TODO</string>
+    <string name="str_read_memory">Read Memory</string>
+    <string name="str_nfc_write_text1">All sector</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_settings">Setting</string>
+    <string name="hello_world">Hello World</string>
+    <string name="str_reader_writer">Reader and Writer</string>
+
+</resources>
