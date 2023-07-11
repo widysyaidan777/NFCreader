@@ -196,6 +196,10 @@ public class MemoryActivity extends AppCompatActivity {
         sb.append('\n');
         sb.append("ID (dec): ").append(toDec(id)).append('\n');
         sb.append('\n');
+        sb.append("ID (reverse hex):").append(toReversedHex(id)).append('\n');
+        sb.append('\n');
+        sb.append("ID (reverse dec):").append(toReversedDec(id)).append('\n');
+        sb.append('\n');
 
 
         String prefix = "android.nfc.tech";
@@ -358,6 +362,30 @@ public class MemoryActivity extends AppCompatActivity {
         }
         return sb.toString();
     }
+    private long toReversedDec(byte[] bytes){
+        long result = 0;
+        long factor = 1;
+        for (int i = bytes.length - 1; i >= 0; --i){
+            long value = bytes[i] & 0xffl;
+            result += value * factor;
+            factor *= 256l;
+        }
+        return result;
+    }
+    private String toReversedHex(byte[] bytes){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < bytes.length; i++){
+            if (i > 0){
+                sb.append(" ");
+            }
+            int b = bytes[i] & 0xff;
+            if (b < 0x10)
+                sb.append('0');
+            sb.append(Integer.toHexString(b));
+        }
+        return sb.toString();
+    }
+
     public void writeTag2(Tag tag, NdefMessage message){
         if (tag != null){
             try {
