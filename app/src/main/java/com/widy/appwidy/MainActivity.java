@@ -16,11 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
-        Button btnRead = findViewById(R.id.btn_read);
-        btnRead.setOnClickListener(this);
+        Button btnReader = findViewById(R.id.btn_readnfc);
+        btnReader.setOnClickListener(this);
 
-        Button btnReadMemory = findViewById(R.id.btn_read_memory);
-        btnReadMemory.setOnClickListener(this);
 
 
         Button btnWrite = findViewById(R.id.btn_write);
@@ -29,15 +27,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.btn_read) {
-            Intent readIntent = new Intent(MainActivity.this, ReaderActivity.class);
-            startActivity(readIntent);
+        if (view.getId() == R.id.btn_readnfc) {
+            Intent readnfcIntent = new Intent(MainActivity.this, ReadActivity.class);
+            startActivity(readnfcIntent);
         } else if (view.getId() == R.id.btn_write) {
             Intent writeIntent = new Intent(MainActivity.this, WriteActivity.class);
             startActivity(writeIntent);
-        } else if (view.getId() == R.id.btn_read_memory) {
-            Intent readmemoryIntent = new Intent(MainActivity.this, MemoryActivity.class);
-            startActivity(readmemoryIntent);
         }
     }
 }

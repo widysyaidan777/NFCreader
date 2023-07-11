@@ -276,6 +276,7 @@ public class MemoryActivity extends AppCompatActivity {
                     sb.append("Authentication with Key B: ");
                     sb.append(mifareTag.authenticateSectorWithKeyB(1, MifareClassic.KEY_DEFAULT));
                     sb.append('\n');
+                    
 
                     mifareTag.close();
 

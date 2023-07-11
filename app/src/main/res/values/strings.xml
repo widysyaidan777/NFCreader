@@ -11,9 +11,7 @@
     <string name="str_tap_your_nfc_tag_on_mobile_to_read">Tap your NFC tag on mobile to read</string>
     <string name="tap_your_str_nfc_tag_on_mobile_to_read">Tap your NFC tag on mobile to read</string>
     <string name="str_todo">TODO</string>
-    <string name="str_read_memory">Read Memory</string>
-    <string name="str_mifaretool">Read Sector</string>
-    <string name="str_nfc_write_text1">All sector</string>
+    <string name="str_read_memory">Read With NFC</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_settings">Setting</string>

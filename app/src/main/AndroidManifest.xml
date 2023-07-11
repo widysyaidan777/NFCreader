@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppWidy">
         <activity
+            android:name=".ReadActivity"
+            android:exported="false"/>
+        <activity
             android:name=".WriteActivity"
             android:exported="false" />
         <activity
