@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.NFC" />
+
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="true" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppWidy">
+        <activity
+            android:name=".WriteActivity"
+            android:exported="false" />
         <activity
             android:name=".ReaderActivity"
             android:exported="false" />
@@ -49,6 +54,12 @@
             <meta-data
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
+            <meta-data
+                android:name="android.nfc.action.TAG_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+            <meta-data
+                android:name="android.nfc.action.NDEF_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter"/>
         </activity>
     </application>
 

@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnReadMemory = findViewById(R.id.btn_read_memory);
         btnReadMemory.setOnClickListener(this);
 
+
+        Button btnWrite = findViewById(R.id.btn_write);
+        btnWrite.setOnClickListener(this);
     }
 
     @Override
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.btn_read) {
             Intent readIntent = new Intent(MainActivity.this, ReaderActivity.class);
             startActivity(readIntent);
+        } else if (view.getId() == R.id.btn_write) {
+            Intent writeIntent = new Intent(MainActivity.this, WriteActivity.class);
+            startActivity(writeIntent);
         } else if (view.getId() == R.id.btn_read_memory) {
             Intent readmemoryIntent = new Intent(MainActivity.this, MemoryActivity.class);
             startActivity(readmemoryIntent);

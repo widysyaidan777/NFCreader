@@ -211,16 +211,6 @@ public class ReaderActivity extends AppCompatActivity {
                     sb.append(mifareTag.authenticateSectorWithKeyB(1, MifareClassic.KEY_DEFAULT));
                     sb.append('\n');
 
-                    sb.append('\n');
-                    sb.append("Authentication with Key A: ");
-                    sb.append(mifareTag.authenticateSectorWithKeyA(1, MifareClassic.KEY_MIFARE_APPLICATION_DIRECTORY));
-                    sb.append('\n');
-
-                    sb.append('\n');
-                    sb.append("Authentication with Key B: ");
-                    sb.append(mifareTag.authenticateSectorWithKeyB(1, MifareClassic.KEY_MIFARE_APPLICATION_DIRECTORY));
-                    sb.append('\n');
-
                     mifareTag.close();
 
                 } catch (Exception e){

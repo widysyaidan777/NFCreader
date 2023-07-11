@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AppWidy</string>
-    <string name="str_read_with_nfc">Read  with NFC</string>
+    <string name="str_read_with_nfc">Read Record : text/plain</string>
     <string name="str_Write_with_nfc">Write with NFC</string>
     <string name="todo">TODO</string>
     <string name="str_nfc">NFC</string>
@@ -12,11 +12,67 @@
     <string name="tap_your_str_nfc_tag_on_mobile_to_read">Tap your NFC tag on mobile to read</string>
     <string name="str_todo">TODO</string>
     <string name="str_read_memory">Read Memory</string>
+    <string name="str_mifaretool">Read Sector</string>
     <string name="str_nfc_write_text1">All sector</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_settings">Setting</string>
     <string name="hello_world">Hello World</string>
-    <string name="str_reader_writer">Reader and Writer</string>
 
+    <string name="tag_unknown">Unknown</string>
+    <string name="tag_unknown_mf_classic">MIFARE Classic, Unknown</string>
+
+    <!-- With ATS -->
+    <string name="tag_0344207577810280">MIFARE DESFire or
+        \nMIFARE DESFire EV1, NXP</string>
+    <string name="tag_0304283877B14A434f503331">JCOP31, IBM</string>
+    <string name="tag_0048207877B1024A434F5076323431">JCOP31 v2.4.1, IBM</string>
+    <string name="tag_0048203833B14A434F503431563232">JCOP41 v2.2, IBM</string>
+    <string name="tag_0004283833B14A434F50343156323331">JCOP41 v2.3.1, IBM</string>
+
+    <!-- Without ATS (ATQA+SAK) -->
+    <string name="tag_000409">MIFARE Mini, NXP</string>
+    <string name="tag_000408">MIFARE Classic 1k, NXP</string>
+    <string name="tag_000218">MIFARE Classic 4k, NXP</string>
+    <string name="tag_004218">MIFARE Classic 4k, NXP</string>
+    <string name="tag_004400">MIFARE Ultralight, NXP</string>
+    <string name="tag_000488">MIFARE Classic 1K, Infineon</string>
+    <string name="tag_000298">MPCOS, Gemplus</string>
+    <string name="tag_000238">MIFARE Classic 4k - emulated (6212 Classic), Nokia</string>
+    <string name="tag_000838">MIFARE Classic 4k - emulated (6131 NFC), Nokia</string>
+    <string name="tag_034420">MIFARE DESFire or
+        \nMIFARE DESFire EV1, NXP</string>
+    <string name="tag_030428">JCOP31, IBM</string>
+    <string name="tag_004820">JCOP, IBM</string>
+    <string name="tag_000428">JCOP41, IBM</string>
+    <string name="tag_0F0101">TNP3xxx (MFC compatible), NXP</string>
+
+    <!-- Without SAK+ATS (only ATQA) -->
+    <string name="tag_0C00">Jewel, Innovision R&amp;T</string>
+
+    <!--Access Conditions for a data block-->
+    <string name="ac_data_block_0">R:AvB|W:AvB|I:AvB|D/T/R:AvB</string>
+    <string name="ac_data_block_1">R:AvB|W:X|I:X|D/T/R:X</string>
+    <string name="ac_data_block_2">R:AvB|W:B|I:X|D/T/R:X</string>
+    <string name="ac_data_block_3">R:AvB|W:B|I:B|D/T/R:AvB</string>
+    <string name="ac_data_block_4">R:AvB|W:X|I:X|D/T/R:AvB</string>
+    <string name="ac_data_block_5">R:B|W:B|I:X|D/T/R:X</string>
+    <string name="ac_data_block_6">R:B|W:X|I:X|D/T/R:X</string>
+    <string name="ac_data_block_7">R:X|W:X|I:X|D/T/R:X</string>
+
+    <!--Access Conditions for data blocks if keyB is readable-->
+    <string name="ac_data_block_no_keyb_0">R:A|W:A|I:A|D/T/R:A</string>
+    <string name="ac_data_block_no_keyb_1">R:A|W:X|I:X|D/T/R:X</string>
+    <string name="ac_data_block_no_keyb_2">R:A|W:X|I:X|D/T/R:A</string>
+    <string name="ac_data_block_no_keyb_3">R:X|W:X|I:X|D/T/R:X</string>
+
+    <!--Access Conditions for a Sector Trailer-->
+    <string name="ac_sector_trailer_0">RA:X|WA:A|RAC:A|WAC:X|RB:A|WB:A</string>
+    <string name="ac_sector_trailer_1">RA:X|WA:X|RAC:A|WAC:X|RB:A|WB:X</string>
+    <string name="ac_sector_trailer_2">RA:X|WA:B|RAC:AvB|WAC:X|RB:X|WB:B</string>
+    <string name="ac_sector_trailer_3">RA:X|WA:X|RAC:AvB|WAC:X|RB:X|WB:X</string>
+    <string name="ac_sector_trailer_4">RA:X|WA:A|RAC:A|WAC:A|RB:A|WB:A</string>
+    <string name="ac_sector_trailer_5">RA:X|WA:B|RAC:AvB|WAC:B|RB:X|WB:B</string>
+    <string name="ac_sector_trailer_6">RA:X|WA:X|RAC:AvB|WAC:B|RB:X|WB:X</string>
+    <string name="ac_sector_trailer_7">RA:X|WA:X|RAC:AvB|WAC:X|RB:X|WB:X</string>
 </resources>

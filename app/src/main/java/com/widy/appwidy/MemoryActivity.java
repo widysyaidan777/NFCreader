@@ -193,7 +193,9 @@ public class MemoryActivity extends AppCompatActivity {
         StringBuilder sb = new StringBuilder();
         byte[] id = tag.getId();
         sb.append("ID (hex): ").append(toHex(id)).append('\n');
+        sb.append('\n');
         sb.append("ID (dec): ").append(toDec(id)).append('\n');
+        sb.append('\n');
 
 
         String prefix = "android.nfc.tech";
@@ -235,23 +237,82 @@ public class MemoryActivity extends AppCompatActivity {
                     sb.append(type);
                     sb.append('\n');
 
+                    sb.append('\n');
                     sb.append("Mifare Size: ");
                     sb.append(mifareTag.getSize());
                     sb.append('\n');
 
                     sb.append('\n');
-                    sb.append("Authenticate with key A: ");
+                    sb.append("Mifare Timeout: ");
+                    sb.append(mifareTag.getTimeout());
+                    sb.append('\n');
+
+                    sb.append('\n');
+                    sb.append("Mifare sectors: ");
+                    sb.append(mifareTag.getSectorCount());
+                    sb.append(", ");
+                    sb.append("blocks: ");
+                    sb.append(mifareTag.getBlockCountInSector(0));
+                    sb.append(", ");
+                    sb.append("bytes: ");
+                    sb.append(mifareTag.getBlockCountInSector(0) * mifareTag.getSectorCount());
+                    sb.append('\n');
+
+                    sb.append('\n');
+                    sb.append("Mifare Max Transceive Length: ");
+                    sb.append(mifareTag.getMaxTransceiveLength());
+                    sb.append('\n');
+
+                    sb.append('\n');
+                    sb.append("Authentication with Key A: ");
                     sb.append(mifareTag.authenticateSectorWithKeyA(1, MifareClassic.KEY_NFC_FORUM));
                     sb.append('\n');
 
                     sb.append('\n');
-                    sb.append("Authenticate with key B: ");
+                    sb.append("Authentication with Key B: ");
                     sb.append(mifareTag.authenticateSectorWithKeyB(1, MifareClassic.KEY_DEFAULT));
-                    mifareTag.close();
                     sb.append('\n');
+
+                    mifareTag.close();
 
                 } catch (Exception e) {
                     sb.append("Mifare Classic error" + e.getMessage());
+                }
+            }
+            if (tech.equals(NfcA.class.getName())) {
+                sb.append('\n');
+                NfcA nfcA = NfcA.get(tag);
+                if (nfcA != null) {
+                    try {
+                        nfcA.connect();
+                        nfcA.transceive(new byte[]{
+                                (byte) 0xA2,
+                                (byte) 0x03,
+                                (byte) 0xE1, (byte) 0x10, (byte) 0x06, (byte) 0x00
+                        });
+                        nfcA.transceive(new byte[]{
+                                (byte) 0xA2,
+                                (byte) 0x04,
+                                (byte) 0x03, (byte) 0x00, (byte) 0xFE, (byte) 0x00
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {
+                            nfcA.close();
+                            sb.append('\n');
+                            sb.append("ATQA: ");
+                            sb.append(nfcA.getAtqa());
+                            sb.append('\n');
+
+                            sb.append('\n');
+                            sb.append("SAK: ");
+                            sb.append(nfcA.getSak());
+                            sb.append('\n');
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
             if (tech.equals(MifareUltralight.class.getName())) {
