@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:padding="16dp">
     <Button
-        android:id="@+id/btn_write"
+        android:id="@+id/btn_tulis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -14,20 +14,20 @@
         android:text="@string/str_Write_with_nfc"
         android:textColor="@android:color/black"
         android:textSize="25sp" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_write"
+        android:layout_below="@+id/btn_tulis"
         android:layout_marginLeft="10dp"
-        android:text="@string/str_Write_with_nfc"
+        android:text="@string/str_nfc_write_text"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="30dp"/>
+
 
     <Button
-        android:id="@+id/btn_readnfc"
+        android:id="@+id/btn_baca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -39,7 +39,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_read_memory"
+        android:layout_below="@+id/btn_baca"
         android:layout_marginLeft="10dp"
         android:text="@string/str_nfc_read_text"
         android:textColor="@color/black"

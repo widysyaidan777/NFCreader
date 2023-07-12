@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     android:padding="16dp"
-    tools:context=".ReadActivity">
+    tools:context=".BacaActivity">
 
     <Button
         android:id="@+id/btn_read_memory"
@@ -27,7 +27,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="30dp"/>
     <Button
         android:id="@+id/btn_read"
         android:layout_width="match_parent"

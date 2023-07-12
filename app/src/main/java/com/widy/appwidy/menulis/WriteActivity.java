@@ -1,4 +1,4 @@
-package com.widy.appwidy;
+package com.widy.appwidy.menulis;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -19,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.widy.appwidy.R;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

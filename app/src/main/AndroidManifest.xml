@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -21,16 +23,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppWidy">
         <activity
-            android:name=".ReadActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".WriteActivity"
+            android:name=".BacaActivity"
             android:exported="false" />
         <activity
-            android:name=".ReaderActivity"
+            android:name=".TulisActivity"
             android:exported="false" />
         <activity
-            android:name=".MemoryActivity"
+            android:name=".menulis.WriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".membaca.ReaderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".membaca.MemoryActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -62,7 +67,7 @@
                 android:resource="@xml/nfc_tech_filter" />
             <meta-data
                 android:name="android.nfc.action.NDEF_DISCOVERED"
-                android:resource="@xml/nfc_tech_filter"/>
+                android:resource="@xml/nfc_tech_filter" />
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.widy.appwidy;
+package com.widy.appwidy.membaca;
 
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -26,6 +26,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.widy.appwidy.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -215,6 +217,7 @@ public class MemoryActivity extends AppCompatActivity {
                 String type = "Unknown";
                 try {
                     MifareClassic mifareTag = MifareClassic.get(tag);
+
                     mifareTag.connect();
                     switch (mifareTag.getType()) {
                         case MifareClassic.TYPE_CLASSIC:
@@ -276,7 +279,6 @@ public class MemoryActivity extends AppCompatActivity {
                     sb.append("Authentication with Key B: ");
                     sb.append(mifareTag.authenticateSectorWithKeyB(1, MifareClassic.KEY_DEFAULT));
                     sb.append('\n');
-                    
 
                     mifareTag.close();
 
@@ -307,7 +309,7 @@ public class MemoryActivity extends AppCompatActivity {
                             nfcA.close();
                             sb.append('\n');
                             sb.append("ATQA: ");
-                            sb.append(nfcA.getAtqa());
+                            sb.append(toHex(nfcA.getAtqa()));
                             sb.append('\n');
 
                             sb.append('\n');

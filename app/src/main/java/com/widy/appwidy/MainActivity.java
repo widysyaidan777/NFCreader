@@ -16,23 +16,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
-        Button btnReader = findViewById(R.id.btn_readnfc);
-        btnReader.setOnClickListener(this);
+        Button btnBaca = findViewById(R.id.btn_baca);
+        btnBaca.setOnClickListener(this);
 
 
-
-        Button btnWrite = findViewById(R.id.btn_write);
-        btnWrite.setOnClickListener(this);
+        Button btnTulis = findViewById(R.id.btn_tulis);
+        btnTulis.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.btn_readnfc) {
-            Intent readnfcIntent = new Intent(MainActivity.this, ReadActivity.class);
-            startActivity(readnfcIntent);
-        } else if (view.getId() == R.id.btn_write) {
-            Intent writeIntent = new Intent(MainActivity.this, WriteActivity.class);
-            startActivity(writeIntent);
+        if (view.getId() == R.id.btn_baca) {
+            Intent bacaIntent = new Intent(MainActivity.this, BacaActivity.class);
+            startActivity(bacaIntent);
+        } else if (view.getId() == R.id.btn_tulis) {
+            Intent tulisIntent = new Intent(MainActivity.this, TulisActivity.class);
+            startActivity(tulisIntent);
         }
     }
 }

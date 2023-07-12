@@ -1,4 +1,4 @@
-package com.widy.appwidy;
+package com.widy.appwidy.membaca;
 
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.widy.appwidy.R;
 import com.widy.appwidy.parser.NdefMessageParser;
 import com.widy.appwidy.record.ParserNdefRecord;
 

@@ -7,11 +7,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ReadActivity extends AppCompatActivity implements View.OnClickListener {
+import com.widy.appwidy.membaca.MemoryActivity;
+import com.widy.appwidy.membaca.ReaderActivity;
+
+public class BacaActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_read);
+        setContentView(R.layout.activity_baca);
 
 
         Button btnRead = findViewById(R.id.btn_read);
@@ -19,17 +22,15 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnReadMemory = findViewById(R.id.btn_read_memory);
         btnReadMemory.setOnClickListener(this);
-
-
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btn_read) {
-            Intent readIntent = new Intent(ReadActivity.this, ReaderActivity.class);
+            Intent readIntent = new Intent(BacaActivity.this, ReaderActivity.class);
             startActivity(readIntent);
         } else if (view.getId() == R.id.btn_read_memory) {
-            Intent readmemoryIntent = new Intent(ReadActivity.this, MemoryActivity.class);
+            Intent readmemoryIntent = new Intent(BacaActivity.this, MemoryActivity.class);
             startActivity(readmemoryIntent);
         }
     }
